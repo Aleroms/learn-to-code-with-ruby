@@ -1,3 +1,6 @@
+# instance_of? method - returns if instance of 
+# is_a? method - returns true if obj inherits from the class  
+
 class Employee
   attr_reader :name
   attr_accessor :age
@@ -24,14 +27,7 @@ end
 bob = Manager.new('Bob',20)
 dan = Worker.new('Dan',55)
 
-puts bob.class
-puts bob.introduce
-puts dan.class
-puts dan.introduce
-
-# inheritance
-# superclass
-#   ^
-# Employee
-#   ^
-# Manager || Worker
+puts bob.instance_of?(Manager)
+puts bob.instance_of? Employee
+puts bob.is_a? Object
+puts bob.is_a? Worker
