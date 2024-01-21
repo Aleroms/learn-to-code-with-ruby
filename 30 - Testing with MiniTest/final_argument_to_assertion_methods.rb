@@ -1,3 +1,5 @@
+# documentation on minitest https://apidock.com/ruby/MiniTest/Assertions/skip
+# more documentation https://docs.seattlerb.org/minitest/
 require 'minitest/autorun'
 class InvalidAttackError < StandardError
 end
@@ -14,7 +16,7 @@ class Pokemon
   end
 end
 
-
+#optional error on context only raised when assertion returns false
 class TestPokemon < Minitest::Test
   def setup
     # runs this method before each test
@@ -22,8 +24,8 @@ class TestPokemon < Minitest::Test
   end
 
   def test_name
-
-    assert_equal("Pikachu",@pikachu.name)
+    # third argument is stdout for developers
+    assert_equal("Pikachuz",@pikachu.name, "The pokemon object did not assign its name correctly")
   end
   def test_type
     assert_equal(:electric,@pikachu.type)
